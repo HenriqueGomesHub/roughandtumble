@@ -1,0 +1,7 @@
+project_id = "zzglgakvioesxkjhctsb"
+
+# poll-espn authenticates itself via the x-shared-secret header (checked inside
+# the function) and is invoked by pg_cron with no JWT, so gateway-level JWT
+# verification must be off or the cron's calls get 401'd before reaching it.
+[functions.poll-espn]
+verify_jwt = false

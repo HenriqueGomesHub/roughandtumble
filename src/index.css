@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --sab: env(safe-area-inset-bottom, 0px);
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Pick'em panel emergence — draws the eye when voting opens. */
+@keyframes emerge {
+  from { opacity: 0; transform: translateY(-10px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Responsive main content padding — clears the fixed mobile bottom nav (4.5rem)
+   plus, with the vote pill open, the floating pill above it. */
+.main-pad       { padding-bottom: calc(5rem + var(--sab)); }
+.main-pad-pill  { padding-bottom: calc(8.5rem + var(--sab)); }
+@media (min-width: 768px) {
+  .main-pad,
+  .main-pad-pill { padding-bottom: 3rem; }
+}
+
+@theme {
+  --color-navy: #232F49;
+  --color-navy-deep: #1A2336;
+  --color-paper: #EEE5DC;
+  --color-paper-deep: #E4D9CA;
+  --color-persimmon: #E96630;
+  --color-persimmon-deep: #D2531D;
+  --color-muted-navy: rgba(35, 47, 73, 0.62);
+  --color-muted-cream: rgba(238, 229, 220, 0.60);
+
+  --font-display: "Zilla Slab", "Sentinel", Rockwell, serif;
+  --font-body: "Hanken Grotesk", system-ui, sans-serif;
+
+  --shadow-card: 0 18px 40px -18px rgba(26, 35, 54, 0.45);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-radius: 0;
+  }
+
+  html {
+    font-family: var(--font-body);
+    background-color: var(--color-paper);
+    color: var(--color-navy);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Rough & Tumble Pick'em",
+  "short_name": "Pick'em",
+  "description": "Pick winners. Build streaks. Climb the board.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EEE5DC",
+  "theme_color": "#232F49",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/RoughTumbleLogo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
